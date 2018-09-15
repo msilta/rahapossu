@@ -1,2 +1,7 @@
 
+# Ignore folders starting with a dot (.)
+.**/
+
+# No compiled stuff
 target/
+
