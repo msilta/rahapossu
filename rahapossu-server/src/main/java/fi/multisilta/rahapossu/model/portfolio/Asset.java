@@ -1,5 +1,7 @@
 package fi.multisilta.rahapossu.model.portfolio;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -29,6 +31,7 @@ public class Asset {
     /**
      * General identifier for the asset (e.g. ETF ticker 'IS3N').
      */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @Column(name = "symbol")
     private String symbol;
 
@@ -39,4 +42,57 @@ public class Asset {
     @OneToMany(mappedBy = "asset", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @OrderBy("timestamp DESC")
     private List<ValueAtMoment> values;
+
+    public Long getId() {
+        return id;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public AssetType getType() {
+        return type;
+    }
+
+    public void setType(AssetType type) {
+        this.type = type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public Portfolio getPortfolio() {
+        return portfolio;
+    }
+
+    public void setPortfolio(Portfolio portfolio) {
+        this.portfolio = portfolio;
+    }
+
+    public List<ValueAtMoment> getValues() {
+        return values;
+    }
+
+    public void setValues(List<ValueAtMoment> values) {
+        this.values = values;
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + ", id:" + getId();
+    }
 }

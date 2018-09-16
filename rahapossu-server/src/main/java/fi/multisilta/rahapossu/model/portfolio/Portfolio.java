@@ -22,4 +22,32 @@ public class Portfolio {
     @OneToMany(mappedBy = "portfolio", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Asset> assets;
 
+    public Long getId() {
+        return id;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<Asset> getAssets() {
+        return assets;
+    }
+
+    public void setAssets(Set<Asset> assets) {
+        this.assets = assets;
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + ", id:" + getId();
+    }
 }
