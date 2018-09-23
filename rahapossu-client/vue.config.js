@@ -1,4 +1,3 @@
-// vue.config.js
 module.exports = {
   devServer: {
     port: 8081,
@@ -8,6 +7,15 @@ module.exports = {
         target: 'http://localhost:8080',
       },
     },
-  }
-}
+  },
 
+  pluginOptions: {
+    quasar: {
+      theme: 'mat',
+      importAll: true,
+    },
+  },
+  transpileDependencies: [
+    /[\\\/]node_modules[\\\/]quasar-framework[\\\/]/,
+  ],
+};

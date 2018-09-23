@@ -26,9 +26,14 @@ public class TestDataInitializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Portfolio portfolio1 = new Portfolio();
-        portfolio1.setName("Test portfolio");
+        portfolio1.setName("Portfolio 1");
         portfolio1 = portfolioRepository.save(portfolio1);
         LOG.info("Created: {}", portfolio1);
+
+        Portfolio portfolio2 = new Portfolio();
+        portfolio2.setName("Portfolio 2");
+        portfolio2 = portfolioRepository.save(portfolio2);
+        LOG.info("Created: {}", portfolio2);
 
         Asset asset1 = createAsset(portfolio1, "Pankki A", AssetType.BANK_ACCOUNT, null);
         asset1 = assetRepository.save(asset1);
