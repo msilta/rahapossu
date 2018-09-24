@@ -1,26 +1,46 @@
 module.exports = {
   root: true,
-  env: {
-    node: true,
+  parserOptions: {
+    parser: 'babel-eslint',
+    sourceType: 'module'
   },
-  extends: [
-    'plugin:vue/essential',
-    '@vue/airbnb',
+  env: {
+    browser: true
+  },
+  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+  // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+  extends: ['plugin:vue/essential', 'airbnb-base'],
+  // required to lint *.vue files
+  plugins: [
+    'vue'
   ],
-  rules: {
-    enforce: 'pre',
-    test: /\.(js|vue)$/,
-    loader: 'eslint-loader',
-    exclude: /node_modules/,
+  globals: {
+    'ga': true, // Google Analytics
+    'cordova': true,
+    '__statics': true
+  },
+  // add your custom rules here
+  'rules': {
+    'no-param-reassign': 0,
+
+    'import/first': 0,
+    'import/named': 2,
+    'import/namespace': 2,
+    'import/default': 2,
+    'import/export': 2,
+    'import/extensions': 0,
+    'import/no-unresolved': 0,
+    'import/no-extraneous-dependencies': 0,
+
+    // allow debugger during development
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+
+    // rahapossu-specific
     'no-underscore-dangle': [2, { allow: ['_embedded'] }],
     'no-new': 'off',
     'no-useless-escape': 'off',
     'max-len': 'off',
     'no-param-reassign': 'off',
-  },
-  parserOptions: {
-    parser: 'babel-eslint',
-  },
-};
+  }
+}

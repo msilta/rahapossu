@@ -1,31 +1,37 @@
 {
   "name": "rahapossu-client",
   "version": "0.0.1",
+  "description": "Personal finance management",
+  "productName": "Rahapossu",
+  "cordovaId": "org.cordova.quasar.app",
+  "author": "Tero Multisilta <tero.multisilta@gmail.com>",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "eslint --ext .js,.vue src",
+    "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "quasar-extras": "^2.0.4",
-    "quasar-framework": "^0.17.0",
-    "vue": "^2.5.17",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "axios": "^0.18.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.3",
-    "@vue/cli-plugin-eslint": "^3.0.3",
-    "@vue/cli-service": "^3.0.3",
-    "@vue/eslint-config-airbnb": "^3.0.3",
-    "babel-plugin-transform-imports": "1.5.0",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.1",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "vue-cli-plugin-quasar": "^0.17.1",
-    "vue-template-compiler": "^2.5.17"
-  }
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-vue": "^4.3.0",
+    "quasar-cli": "^0.17.0",
+    "strip-ansi": "=3.0.1"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ]
 }

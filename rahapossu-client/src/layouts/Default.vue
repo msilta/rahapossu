@@ -8,7 +8,7 @@
       </q-toolbar>
     </q-layout-header>
 
-    <q-layout-drawer width="200" v-model="leftDrawerOpen" :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null">
+    <q-layout-drawer v-model="leftDrawerOpen" :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null">
       <q-list no-border link inset-delimiter>
         <q-list no-border link inset-delimiter>
           <q-list-header>Navigation</q-list-header>

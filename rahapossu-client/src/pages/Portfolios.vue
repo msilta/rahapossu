@@ -3,7 +3,7 @@
     <div class="q-headline">Portfolios</div>
     <q-list link>
       <template v-for="portfolio in portfolios">
-        <q-item :key="portfolio.id">
+        <q-item :key="portfolio.id + '-item'">
           <q-item-main :label="portfolio.name" />
           <q-item-side right>
             <q-btn-group>
@@ -13,7 +13,7 @@
             </q-btn-group>
           </q-item-side>
         </q-item>
-        <q-item-separator :key="portfolio.id" />
+        <q-item-separator :key="portfolio.id + '-separator'" />
       </template>
     </q-list>
   </q-page>
